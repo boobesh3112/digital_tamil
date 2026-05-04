@@ -1,0 +1,216 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* Tamil Cultural Colors - Maroon, Gold, Beige Theme */
+  --tamil-maroon: #8B1538;
+  --tamil-maroon-light: #A52A52;
+  --tamil-maroon-dark: #6B0F2A;
+  --tamil-gold: #D4AF37;
+  --tamil-gold-light: #F4D03F;
+  --tamil-gold-dark: #B8941F;
+  --tamil-beige: #F5F5DC;
+  --tamil-beige-dark: #E8E4C9;
+  --tamil-cream: #FFF8E7;
+
+  --background: var(--tamil-cream);
+  --foreground: #1a1410;
+  --card: #ffffff;
+  --card-foreground: #1a1410;
+  --popover: #ffffff;
+  --popover-foreground: #1a1410;
+  --primary: var(--tamil-maroon);
+  --primary-foreground: #ffffff;
+  --secondary: var(--tamil-beige-dark);
+  --secondary-foreground: #1a1410;
+  --muted: var(--tamil-beige);
+  --muted-foreground: #6b5a4d;
+  --accent: var(--tamil-gold);
+  --accent-foreground: #1a1410;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(139, 21, 56, 0.15);
+  --input: transparent;
+  --input-background: #ffffff;
+  --switch-background: #cbced4;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: var(--tamil-gold);
+  --chart-1: var(--tamil-maroon);
+  --chart-2: var(--tamil-gold);
+  --chart-3: #8B6F47;
+  --chart-4: #C19A6B;
+  --chart-5: #D2B48C;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a1410;
+  --sidebar-primary: var(--tamil-maroon);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--tamil-beige);
+  --sidebar-accent-foreground: #1a1410;
+  --sidebar-border: rgba(139, 21, 56, 0.1);
+  --sidebar-ring: var(--tamil-gold);
+}
+
+.dark {
+  --background: #1a1410;
+  --foreground: var(--tamil-beige);
+  --card: #2a2420;
+  --card-foreground: var(--tamil-beige);
+  --popover: #2a2420;
+  --popover-foreground: var(--tamil-beige);
+  --primary: var(--tamil-gold);
+  --primary-foreground: #1a1410;
+  --secondary: #3a3430;
+  --secondary-foreground: var(--tamil-beige);
+  --muted: #3a3430;
+  --muted-foreground: #a89c8f;
+  --accent: var(--tamil-maroon-light);
+  --accent-foreground: #ffffff;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(212, 175, 55, 0.2);
+  --input: #2a2420;
+  --ring: var(--tamil-gold);
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --chart-1: var(--tamil-gold);
+  --chart-2: var(--tamil-maroon-light);
+  --chart-3: #a89c8f;
+  --chart-4: #C19A6B;
+  --chart-5: #D2B48C;
+  --sidebar: #2a2420;
+  --sidebar-foreground: var(--tamil-beige);
+  --sidebar-primary: var(--tamil-gold);
+  --sidebar-primary-foreground: #1a1410;
+  --sidebar-accent: #3a3430;
+  --sidebar-accent-foreground: var(--tamil-beige);
+  --sidebar-border: rgba(212, 175, 55, 0.2);
+  --sidebar-ring: var(--tamil-gold);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans Tamil', sans-serif;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: 'Tiro Tamil', 'Noto Sans Tamil', serif;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: 'Tiro Tamil', 'Noto Sans Tamil', serif;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: 'Tiro Tamil', 'Noto Sans Tamil', serif;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+/* Tamil Cultural Background Pattern */
+.tamil-pattern-bg {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(139, 21, 56, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
